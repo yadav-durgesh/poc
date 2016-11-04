@@ -4,7 +4,7 @@ module.exports = {
         host: '127.0.0.1',
         user: 'root',
         password: '',
-        database: 'test',
+        database: process.env.JAWSDB_URL || 'test',
     },
     pool: {
         min: 2,
