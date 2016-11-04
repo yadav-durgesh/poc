@@ -17,11 +17,7 @@ import todoRouter  from './routers/Todo.router';
 // ------------------------------
 import knex       from 'knex';
 import knexConfig from './db/knexfile.js';
-knex.schema.createTableIfNotExists('Todos', function (table) {
-  table.increments();
-  table.string('title');
-  table.boolean('complete');
-});
+
 const connection = knex(knexConfig);
 Model.knex(connection);
 
@@ -48,4 +44,6 @@ app.route('/*').get((req, res) => res.sendFile(path.resolve(`${app.get('appPath'
 // Initialize Server
 // ------------------------------
 const port = process.env.PORT || 8080;
-app.listen(port);
+app.listen(port, () => {
+  console.log('app listening on port: ', port);
+});
