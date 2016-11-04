@@ -12,6 +12,7 @@ import path       from 'path';
 // ------------------------------
 import todoRouter  from './routers/Todo.router';
 var pg = require('pg');
+console.log('pg', pg);
 
 pg.defaults.ssl = true;
 pg.connect(process.env.DATABASE_URL, function(err, client) {

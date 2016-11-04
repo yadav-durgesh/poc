@@ -38154,7 +38154,7 @@
 /* 534 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -38187,7 +38187,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_get__('axios').defaults.baseURL = 'http://localhost:8080/';
+	console.log('the process env', process.env);
+	_get__('axios').defaults.baseURL = process.env.PORT || 'http://localhost:8080/';
 
 	exports.default = _get__('axios');
 
@@ -38337,6 +38338,7 @@
 	exports.__set__ = _set__;
 	exports.__ResetDependency__ = _reset__;
 	exports.__RewireAPI__ = _RewireAPI__;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(81)))
 
 /***/ },
 /* 535 */

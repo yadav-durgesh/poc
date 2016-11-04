@@ -21,6 +21,10 @@ var _create = require('babel-runtime/core-js/object/create');
 
 var _create2 = _interopRequireDefault(_create);
 
+var _stringify = require('babel-runtime/core-js/json/stringify');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -54,17 +58,31 @@ var _knexfile2 = _interopRequireDefault(_knexfile);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // ------------------------------
-// Establish Knex Connection
-// ------------------------------
-// ------------------------------
 // Import Dependencies
 // ------------------------------
-var connection = _get__('knex')(_get__('knexConfig'));
+var pg = require('pg');
 
 // ------------------------------
 // Import Routers
 // ------------------------------
 
+console.log('pg', _get__('pg'));
+
+_get__('pg').defaults.ssl = true;
+_get__('pg').connect(process.env.DATABASE_URL, function (err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
+  client.query('SELECT table_schema,table_name FROM information_schema.tables;').on('row', function (row) {
+    console.log((0, _stringify2.default)(row));
+  });
+});
+// ------------------------------
+// Establish Knex Connection
+// ------------------------------
+
+
+var connection = _get__('knex')(_get__('knexConfig'));
 _get__('Model').knex(_get__('connection'));
 
 // ------------------------------
@@ -133,6 +151,9 @@ function _get__(variableName) {
 
 function _get_original__(variableName) {
   switch (variableName) {
+    case 'pg':
+      return pg;
+
     case 'knex':
       return _knex2.default;
 
