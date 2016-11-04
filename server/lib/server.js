@@ -69,7 +69,7 @@ var pg = require('pg');
 console.log('pg', _get__('pg'));
 
 _get__('pg').defaults.ssl = true;
-_get__('pg').connect(process.env.DATABASE_URL, function (err, client) {
+_get__('pg').connect(process.env.JAWSDB_URL, function (err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
