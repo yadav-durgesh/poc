@@ -81,7 +81,11 @@ _get__('pg').connect(process.env.DATABASE_URL, function (err, client) {
 // Establish Knex Connection
 // ------------------------------
 
-
+_get__('knex').schema.createTableIfNotExists('Todos', function (table) {
+  table.increments();
+  table.string('title');
+  table.boolean('complete');
+});
 var connection = _get__('knex')(_get__('knexConfig'));
 _get__('Model').knex(_get__('connection'));
 
