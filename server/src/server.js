@@ -30,7 +30,11 @@ pg.connect(process.env.DATABASE_URL, function(err, client) {
 // ------------------------------
 import knex       from 'knex';
 import knexConfig from './db/knexfile.js';
-
+knex.schema.createTableIfNotExists('Todos', function (table) {
+  table.increments();
+  table.string('title');
+  table.boolean('complete');
+});
 const connection = knex(knexConfig);
 Model.knex(connection);
 
