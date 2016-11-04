@@ -1,10 +1,10 @@
 module.exports = {
     client: 'mysql',
     connection: {
-        host: process.env.JAWSDB_URL || '127.0.0.1',
+        host: process.env.JAWSDB_COBALT_URL || '127.0.0.1',
         user: 'root',
         password: '',
-        database: process.env.JAWSDB_URL || 'test',
+        database: process.env.JAWSDB_COBALT_URL || 'test',
     },
     pool: {
         min: 2,
