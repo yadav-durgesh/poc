@@ -1,5 +1,5 @@
 import { createAction }       from 'redux-actions';
-import axios                  from '../axios';
+import axios                  from 'axios';
 import * as TodoActionTypes   from '../constants/Todo.constants';
 
 const requestData  = createAction(TodoActionTypes.REQUEST_DATA);
