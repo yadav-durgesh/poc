@@ -5,7 +5,7 @@ module.exports = {
         port: process.env.JAWSDB_COBALT_PORT || 8080,
         user: process.env.JAWSDB_COBALT_USER || 'root',
         password: process.env.JAWSDB_COBALT_PASSWORD || '',
-        database: process.env.JAWSDB_COBALT_URL || 'test',
+        database: 'ramen',
     },
     pool: {
         min: 2,
