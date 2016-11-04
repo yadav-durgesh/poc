@@ -38188,7 +38188,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	console.log('the process env', process.env);
-	_get__('axios').defaults.baseURL = process.env.PORT || 'http://localhost:8080/';
+	_get__('axios').defaults.baseURL = process.env.PORT;
 
 	exports.default = _get__('axios');
 
