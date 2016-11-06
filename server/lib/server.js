@@ -59,12 +59,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // ------------------------------
 // Import Dependencies
 // ------------------------------
-var connection = _get__('knex')(_get__('knexConfig'));
+console.log('knex', _get__('knex'));
 
 // ------------------------------
 // Import Routers
 // ------------------------------
 
+
+var connection = _get__('knex')(_get__('knexConfig')).migrate.latest();
 _get__('Model').knex(_get__('connection'));
 
 // ------------------------------
@@ -92,6 +94,7 @@ _get__('app').route('/*').get(function (req, res) {
 // Initialize Server
 // ------------------------------
 var port = process.env.PORT || 8080;
+
 _get__('app').listen(_get__('port'), function () {
   console.log('app listening on port: ', _get__('port'));
 });

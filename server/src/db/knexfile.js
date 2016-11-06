@@ -1,10 +1,9 @@
 module.exports = {
     client: 'mysql',
     connection: {
-        host: process.env.JAWSDB_HOST || '127.0.0.1',
-        port: process.env.JAWSDB_PORT || 8080,
-        user: process.env.JAWSDB_USER || 'root',
-        password: process.env.JAWSDB_PASSWORD || '',
+        host: '127.0.0.1',
+        user: 'root',
+        password: '',
         database: process.env.JAWSDB_DB || 'ramen',
     },
     pool: {
