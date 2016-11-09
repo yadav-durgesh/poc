@@ -65,8 +65,10 @@ var connection = _get__('knex')(_get__('knexConfig'));
 // Import Routers
 // ------------------------------
 
-_get__('connection').migrate.latest();
+
 _get__('Model').knex(_get__('connection'));
+
+_get__('connection').migrate.latest();
 
 // ------------------------------
 // Configure Express
@@ -143,11 +145,11 @@ function _get_original__(variableName) {
     case 'knexConfig':
       return _knexfile2.default;
 
-    case 'connection':
-      return connection;
-
     case 'Model':
       return _objection.Model;
+
+    case 'connection':
+      return connection;
 
     case 'express':
       return _express2.default;

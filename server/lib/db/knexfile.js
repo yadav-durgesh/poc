@@ -6,7 +6,7 @@ module.exports = {
         host: '127.0.0.1',
         user: 'root',
         password: '',
-        database: process.env.JAWSDB_URL || 'ramen'
+        database: process.env.CLEARDB_DATABASE_URL || 'ramen'
     },
     pool: {
         min: 2,
