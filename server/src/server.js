@@ -18,8 +18,6 @@ import todoRouter  from './routers/Todo.router';
 import knex       from 'knex';
 import knexConfig from './db/knexfile.js';
 
-console.log('knex', knex);
-
 const connection = knex(knexConfig).migrate.latest();
 Model.knex(connection);
 
