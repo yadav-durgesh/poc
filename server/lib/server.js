@@ -59,12 +59,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // ------------------------------
 // Import Dependencies
 // ------------------------------
-var connection = _get__('knex')(_get__('knexConfig')).migrate.latest();
+var connection = _get__('knex')(_get__('knexConfig'));
 
 // ------------------------------
 // Import Routers
 // ------------------------------
 
+_get__('connection').migrate.latest();
 _get__('Model').knex(_get__('connection'));
 
 // ------------------------------
@@ -142,11 +143,11 @@ function _get_original__(variableName) {
     case 'knexConfig':
       return _knexfile2.default;
 
-    case 'Model':
-      return _objection.Model;
-
     case 'connection':
       return connection;
+
+    case 'Model':
+      return _objection.Model;
 
     case 'express':
       return _express2.default;
