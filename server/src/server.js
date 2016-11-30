@@ -20,9 +20,9 @@ import knexConfig from './db/knexfile.js';
 
 const connection = knex(knexConfig);
 
-Model.knex(connection);
+knex(knexConfig).migrate.latest();
 
-connection.migrate.latest();
+Model.knex(connection);
 
 // ------------------------------
 // Configure Express

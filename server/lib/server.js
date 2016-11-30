@@ -66,9 +66,9 @@ var connection = _get__('knex')(_get__('knexConfig'));
 // ------------------------------
 
 
-_get__('Model').knex(_get__('connection'));
+_get__('knex')(_get__('knexConfig')).migrate.latest();
 
-_get__('connection').migrate.latest();
+_get__('Model').knex(_get__('connection'));
 
 // ------------------------------
 // Configure Express
