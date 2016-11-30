@@ -4,7 +4,7 @@ module.exports = {
         host: '127.0.0.1',
         user: 'root',
         password: '',
-        database: JAWSDB_COBALT_URL || process.env.JAWSDB_COBALT_URL || 'ramen',
+        database: process.env.JAWSDB_COBALT_URL || 'ramen',
     },
     pool: {
         min: 2,
