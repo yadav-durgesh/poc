@@ -1,7 +1,7 @@
 import path from 'path';
 
 const dependencies = [
-  'axios',
+  'epona',
   'react',
   'react-bootstrap',
   'react-dom',

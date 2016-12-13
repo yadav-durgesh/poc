@@ -10,9 +10,9 @@
   "author": "Blake Guilloud",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.15.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
+    "epona": "^1.0.3",
     "express": "^4.14.0",
     "knex": "0.11.7",
     "mysql": "^2.11.1",
