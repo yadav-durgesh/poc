@@ -37554,6 +37554,10 @@
 
 	var _components = __webpack_require__(535);
 
+	var _react3 = __webpack_require__(537);
+
+	var _react4 = _interopRequireDefault(_react3);
+
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -37698,13 +37702,13 @@
 	  return Todos;
 	}(_get__('React').Component);
 
-	Todos.propTypes = {
-	  createTodo: _get__('React').PropTypes.func,
-	  destroyTodo: _get__('React').PropTypes.func,
-	  fetchTodos: _get__('React').PropTypes.func,
-	  updateTodo: _get__('React').PropTypes.func,
-	  todos: _get__('React').PropTypes.array
-	};
+	Todos.propTypes = _get__('rpt')({
+	  createTodo: 'func',
+	  destroyTodo: 'func',
+	  fetchTodos: 'func',
+	  updateTodo: 'func',
+	  todos: 'array'
+	});
 
 
 	function mapStateToProps(state) {
@@ -37767,6 +37771,9 @@
 
 	function _get_original__(variableName) {
 	  switch (variableName) {
+	    case 'rpt':
+	      return _react4.default;
+
 	    case 'React':
 	      return _react2.default;
 
@@ -38548,6 +38555,24 @@
 	exports.__set__ = _set__;
 	exports.__ResetDependency__ = _reset__;
 	exports.__RewireAPI__ = _RewireAPI__;
+
+/***/ },
+/* 537 */
+/***/ function(module, exports, __webpack_require__) {
+
+	const React = __webpack_require__(82);
+
+	function handleProps(props) {
+	  const newProps = {};
+
+	  Object.keys(props).map(item => newProps[item] = React.PropTypes[props[item]]);
+
+	  return newProps;
+	}
+
+
+	module.exports = handleProps;
+
 
 /***/ }
 /******/ ]);

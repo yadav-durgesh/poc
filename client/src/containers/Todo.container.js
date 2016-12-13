@@ -3,16 +3,17 @@ import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as TodoActions       from '../actions/Todo.actions';
 import { TodoComponent }      from '../components';
+import rpt                    from 'react.proptypes';
 
 class Todos extends React.Component {
 
-  static propTypes = {
-    createTodo: React.PropTypes.func,
-    destroyTodo: React.PropTypes.func,
-    fetchTodos: React.PropTypes.func,
-    updateTodo: React.PropTypes.func,
-    todos: React.PropTypes.array,
-  };
+  static propTypes = rpt({
+    createTodo: 'func',
+    destroyTodo: 'func',
+    fetchTodos: 'func',
+    updateTodo: 'func',
+    todos: 'array',
+  });
 
   state = {
     title: '',
