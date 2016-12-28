@@ -28,7 +28,8 @@
     "react.proptypes": "^1.0.1",
     "redux": "^3.6.0",
     "redux-actions": "^0.12.0",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "tael": "^1.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.0",

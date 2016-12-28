@@ -34,6 +34,8 @@ var _Todo = require('../db/services/Todo.service');
 
 var todoService = _interopRequireWildcard(_Todo);
 
+var _tael = require('tael');
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -41,33 +43,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function postTodo(req, res) {
   _promise2.default.resolve().then(function () {
     return _get__('todoService').postTodo(req.body);
-  }).then(function (todo) {
-    return res.status(200).json(todo);
-  });
+  }).then(_get__('SendSuccess')(res)).catch(_get__('SendError')(res));
 }
 
 function getTodos(req, res) {
-  _promise2.default.resolve().then(function () {
+  return _promise2.default.resolve().then(function () {
     return _get__('todoService').getTodos();
-  }).then(function (todos) {
-    return res.status(200).json(todos);
-  });
+  }).then(_get__('SendSuccess')(res)).catch(_get__('SendError')(res));
 }
 
 function patchTodo(req, res) {
   _promise2.default.resolve().then(function () {
     return _get__('todoService').patchTodo(req.params.id, req.body);
-  }).then(function (todos) {
-    return res.status(200).json(todos);
-  });
+  }).then(_get__('SendSuccess')(res)).catch(_get__('SendError')(res));
 }
 
 function deleteTodo(req, res) {
   _promise2.default.resolve().then(function () {
     return _get__('todoService').deleteTodo(req.params.id);
-  }).then(function (todos) {
-    return res.status(200).json(todos);
-  });
+  }).then(_get__('SendSuccess')(res)).catch(_get__('SendError')(res));
 }
 
 var _RewiredData__ = (0, _create2.default)(null);
@@ -111,6 +105,12 @@ function _get_original__(variableName) {
   switch (variableName) {
     case 'todoService':
       return _filterWildcardImport__(todoService);
+
+    case 'SendSuccess':
+      return _tael.SendSuccess;
+
+    case 'SendError':
+      return _tael.SendError;
   }
 
   return undefined;

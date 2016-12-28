@@ -28966,72 +28966,9 @@
 /* 532 */,
 /* 533 */,
 /* 534 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	const defaultHeaders = { 'Content-Type': 'application/json' };
-
-	function get(body) {
-	  const request = new Request(body.route);
-
-	  return fetch(request).then(blob => blob.json());
-	}
-
-	function post(body) {
-
-	  const request = new Request(body.route, {
-	  	method: 'POST',
-	  	mode: body.mode || 'cors',
-	    body: JSON.stringify(body.body),
-	  	redirect: body.redirect || 'follow',
-	  	headers: new Headers(body.headers || defaultHeaders),
-	  });
-
-	  return fetch(request).then(blob => blob.json());
-	}
-
-	function put(body) {
-	  const request = new Request(body.route, {
-	  	method: 'PUT',
-	    mode: body.mode || 'cors',
-	    body: JSON.stringify(body.body),
-	  	redirect: body.redirect || 'follow',
-	  	headers: new Headers(body.headers || defaultHeaders),
-	  });
-
-	  return fetch(request).then(blob => blob.json());
-	}
-
-	function patch(body) {
-	  const request = new Request(body.route, {
-	  	method: 'PATCH',
-	    mode: body.mode || 'cors',
-	    body: JSON.stringify(body.body),
-	  	redirect: body.redirect || 'follow',
-	  	headers: new Headers(body.headers || defaultHeaders),
-	  });
-
-	  return fetch(request).then(blob => blob.json());
-	}
-
-	function del(body) {
-	  const request = new Request(body.route, {
-	  	method: 'DELETE',
-	    mode: body.mode || 'cors',
-	  	redirect: body.redirect || 'follow',
-	  	headers: new Headers(defaultHeaders),
-	  });
-
-	  return fetch(request).then(blob => blob.json());
-	}
-
-	module.exports = {
-	  get: get,
-	  post: post,
-	  put: put,
-	  patch: patch,
-	  delete: del,
-	};
-
+	!function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.epona=t():e.epona=t()}(this,function(){return function(e){function t(o){if(r[o])return r[o].exports;var n=r[o]={exports:{},id:o,loaded:!1};return e[o].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var r={};return t.m=e,t.c=r,t.p="",t(0)}([function(e,t,r){e.exports=r(4)},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.defaultHeaders={"Content-Type":"application/json"}},function(e,t,r){e.exports={default:r(10),__esModule:!0}},function(e,t,r){"use strict";function o(e){var t=new Request(e.route,{method:"DELETE",mode:e.mode||"cors",redirect:e.redirect||"follow",headers:new Headers(n.defaultHeaders)});return fetch(t).then(function(e){return e.json()}).catch(function(e){return e})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var n=r(1)},function(e,t,r){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}var n=r(3),u=o(n),c=r(5),a=o(c),l=r(7),d=o(l),f=r(8),s=o(f),i=r(9),p=o(i),h=r(6);e.exports={get:a.default,post:s.default,put:p.default,patch:d.default,delete:u.default,localSet:h.localSet,localGet:h.localGet,localDelete:h.localDelete,localClear:h.localClear}},function(e,t,r){"use strict";function o(e){var t=new Request(e.route);return fetch(t).then(function(e){return e.json()}).catch(function(e){return e})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;r(1)},function(e,t){"use strict";function r(e,t){return localStorage.setItem(e,t)}function o(e){return localStorage.getItem(e)}function n(e){return localStorage.removeItem(e)}function u(){return localStorage.clear()}Object.defineProperty(t,"__esModule",{value:!0}),t.localSet=r,t.localGet=o,t.localDelete=n,t.localClear=u},function(e,t,r){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}function n(e){var t=new Request(e.route,{method:"PATCH",mode:e.mode||"cors",body:(0,c.default)(e.body),redirect:e.redirect||"follow",headers:new Headers(e.headers||a.defaultHeaders)});return fetch(t).then(function(e){return e.json()}).catch(function(e){return e})}Object.defineProperty(t,"__esModule",{value:!0});var u=r(2),c=o(u);t.default=n;var a=r(1)},function(e,t,r){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}function n(e){var t=new Request(e.route,{method:"POST",mode:e.mode||"cors",body:(0,c.default)(e.body),redirect:e.redirect||"follow",headers:new Headers(e.headers||a.defaultHeaders)});return fetch(t).then(function(e){return e.json()}).catch(function(e){return e})}Object.defineProperty(t,"__esModule",{value:!0});var u=r(2),c=o(u);t.default=n;var a=r(1)},function(e,t,r){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}function n(e){var t=new Request(body.route,{method:"PUT",mode:e.mode||"cors",body:(0,c.default)(e.body),redirect:e.redirect||"follow",headers:new Headers(e.headers||a.defaultHeaders)});return fetch(t).then(function(e){return e.json()}).catch(function(e){return e})}Object.defineProperty(t,"__esModule",{value:!0});var u=r(2),c=o(u);t.default=n;var a=r(1)},function(e,t,r){var o=r(11),n=o.JSON||(o.JSON={stringify:JSON.stringify});e.exports=function(e){return n.stringify.apply(n,arguments)}},function(e,t){var r=e.exports={version:"2.4.0"};"number"==typeof __e&&(__e=r)}])});
 
 /***/ },
 /* 535 */,
