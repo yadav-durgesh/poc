@@ -4,7 +4,7 @@ module.exports = {
         host: process.env.PORT || '127.0.0.1',
         user: 'root',
         password: '',
-        database: process.env.JAWSDB_COBALT_URL || 'ramen',
+        database: process.env.CLEARDB_DATABASE_URL || 'ramen',
     },
     pool: {
         min: 2,
