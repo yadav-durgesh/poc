@@ -7,6 +7,7 @@ import {
   NavLink as BSNavLink
 } from 'reactstrap';
 import bn from '../utils/bemnames';
+import menuIcon from '../../assets/images/settings.png'
 // import '../../assets/css/reduction.css';
 
 const sidebarBackground = {
@@ -21,10 +22,10 @@ const SourceLink = props => {
   };
 
 const navItems = [
-    { to: '/', name: 'Home', exact: true, img:'AddDash' },
-    { to: '/dashboard', name: 'Dashboard', exact: true, img:'AddDash' },
-    { to: '/static', name: 'Static Table', exact: true, img:'AddDash' },
-    { to: '/dynamic', name: 'Dynamic Table', exact: true, img:'AddDash' },
+    { to: '/', name: 'Home', exact: true, img:menuIcon },
+    { to: '/dashboard', name: 'Dashboard', exact: true, img:menuIcon },
+    { to: '/static', name: 'Static Table', exact: true, img:menuIcon },
+    { to: '/dynamic', name: 'Dynamic Table', exact: true, img:menuIcon },
 ];
 
 const bem = bn.create('sidebar');

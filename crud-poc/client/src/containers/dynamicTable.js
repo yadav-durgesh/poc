@@ -113,16 +113,18 @@ class DynamicTable extends React.Component {
                 <div>
                     <form onSubmit={this._submitHandler}>
                         <h1>Add Task</h1>
-                        <p>Enter Title:</p>
+                        <p className="inLine">Enter Title:</p>
                         <input
                             type="Title"
+                            className="inLine"
                             name="Title"
                             onChange={this._setTitle}
                             value={this.state.title}
                             autocomplete="off"
                         />
+                        
                         <input
-                            type='submit' value={this.state.submitText}
+                            type='submit' className="inLine btn-outline-info" value={this.state.submitText}
                         />
                     </form>
                 </div>
@@ -145,7 +147,7 @@ class DynamicTable extends React.Component {
                                         <td>{value.title}</td>
                                         <td>{value.createdAt}</td>
                                         <td>{value.updatedAt}</td>
-                                        <td><button onClick={() => {this._editHandler(value, index)}}>Edit</button><button onClick={() => {this._deleteHandler(value.id, index)}}>Delete</button></td>
+                                        <td><button className="inLine btn-outline-info" onClick={() => {this._editHandler(value, index)}}>Edit</button><button className="inLine btn-outline-danger" onClick={() => {this._deleteHandler(value.id, index)}}>Delete</button></td>
                                     </tr>
                                 )
                             }) : <tr><td colSpan="5">Loading...</td></tr>}
