@@ -1,5 +1,13 @@
 {
   "development": {
+    "username": "xmhvedpe",
+    "password": "mDDbhLZ6QFig92kv41Ung3YcwSImUYrZ",
+    "database": "xmhvedpe",
+    "host": "drona.db.elephantsql.com",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "productions": {
     "username": "postgres",
     "password": "root",
     "database": "todo",
