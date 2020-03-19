@@ -14,5 +14,6 @@ To run the project on your local:
 5) navigate to `crud-poc\client` folder
 6) and Run `npm install` in the terminal 😄
 7) After successfull installation Run `npm run start` (server is up on http://localhost:3000/) 
+8) For swagger to test api goto (http://127.0.0.1:8000/api-docs/) (basic, learning process)
 
 Hope it Helps!  😎

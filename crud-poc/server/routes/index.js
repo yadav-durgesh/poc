@@ -72,7 +72,7 @@ module.exports = (app) => {
    *        description: A successful response
    */
   app.get('/api/todos', todosController.list);
-  /**
+/**
  * @swagger
  *
  * /api/todos/{id}:
@@ -92,67 +92,142 @@ module.exports = (app) => {
  *           $ref: '#/definitions/Todo'
  */
   app.get('/api/todos/:todoId', todosController.retrieve);
-  /**
-   * @swagger
-   * /api/todos/:todoId:
-   *  put:
-   *    description: Use to request all customers
-   *    responses:
-   *      '200':
-   *        description: A successful response
-   */
+
+  /*------------------------------------------------------------*/
+/**
+ * @swagger
+ *
+ * /api/todos/{id}:
+ *   put:
+ *     description: Use to update single todo data
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: id
+ *         description: Integer value for todo id.
+ *         in:  path
+ *         required: true
+ *       - name: title
+ *         description: Title object.
+ *         in:  body
+ *         required: true
+ *         type: application/json
+ *         schema:
+ *           $ref: '#/definitions/NewTodo'
+ *     responses:
+ *       200:
+ *         description: Todo
+ *         schema:
+ *           $ref: '#/definitions/Todo'
+ */
   app.put('/api/todos/:todoId', todosController.update);
+  
   /**
-   * @swagger
-   * /api/todos/:todoId:
-   *  delete:
-   *    description: Use to request all customers
-   *    responses:
-   *      '200':
-   *        description: A successful response
-   */
+ * @swagger
+ *
+ * /api/todos/{id}:
+ *   delete:
+ *     description: Use to delete single todo data
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: id
+ *         description: Integer value for todo id.
+ *         in:  path
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Todo
+ *         schema:
+ *           $ref: '#/definitions/Todo'
+ */
   app.delete('/api/todos/:todoId', todosController.destroy);
-  /**
-   * @swagger
-   * /api/todos/:todoId/items:
-   *  post:
-   *    description: Use to request all customers
-   *    responses:
-   *      '200':
-   *        description: A successful response
-   */
+
+/**
+ * @swagger
+ *
+ * /api/todos/{id}/items:
+ *   post:
+ *     description: Use to delete single todo data
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: id
+ *         description: Integer value for todo id.
+ *         in:  path
+ *         required: true
+ *       - name: content
+ *         description: Content object.
+ *         in:  body
+ *         required: true
+ *         type: application/json
+ *         schema:
+ *           $ref: '#/definitions/NewTodoItems'
+ *     responses:
+ *       200:
+ *         description: Todo
+ *         schema:
+ *           $ref: '#/definitions/Todo'
+ */
   app.post('/api/todos/:todoId/items', todoItemsController.create);
-  /**
-   * @swagger
-   * /api/todos/:todoId/items/:todoItemId:
-   *  put:
-   *    description: Use to request all customers
-   *    responses:
-   *      '200':
-   *        description: A successful response
-   */
+/**
+ * @swagger
+ *
+ * /api/todos/{id}/items/{itemId}:
+ *   put:
+ *     description: Use to delete single todo data
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: id
+ *         description: Integer value for todo id.
+ *         in:  path
+ *         required: true
+ *       - name: itemId
+ *         description: Integer value for todo item id.
+ *         in:  path
+ *         required: true
+ *       - name: content
+ *         description: Content object.
+ *         in:  body
+ *         required: true
+ *         type: application/json
+ *         schema:
+ *           $ref: '#/definitions/NewTodoItems'
+ *     responses:
+ *       200:
+ *         description: Todo
+ *         schema:
+ *           $ref: '#/definitions/Todo'
+ */
   app.put('/api/todos/:todoId/items/:todoItemId', todoItemsController.update);
   /**
-   * @swagger
-   * /api/todos/:todoId/items/:todoItemId:
-   *  delete:
-   *    description: Use to request all customers
-   *    responses:
-   *      '200':
-   *        description: A successful response
-   */
+ * @swagger
+ *
+ * /api/todos/{id}/items/{itemId}:
+ *  delete:
+ *     description: Use to delete single todo data
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: id
+ *         description: Integer value for todo id.
+ *         in:  path
+ *         required: true
+ *       - name: itemId
+ *         description: Integer value for todo item id.
+ *         in:  path
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Todo
+ *         schema:
+ *           $ref: '#/definitions/Todo'
+ */
   app.delete(
     '/api/todos/:todoId/items/:todoItemId', todoItemsController.destroy
   );
-  /**
-   * @swagger
-   * /api/todos/:todoId/items:
-   *  all:
-   *    description: Use to request all customers
-   *    responses:
-   *      '200':
-   *        description: A successful response
-   */
+  
   app.all('/api/todos/:todoId/items', (req, res) => res.status(405).send({
     message: 'Method Not Allowed',
   }));
