@@ -3,25 +3,8 @@ const todoItemsController = require('../controllers').todoItems;
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 
-
 // Extended: https://swagger.io/specification/#infoObject
-const swaggerOptions = {
-  definition: {
-    info: {
-      title: "Todo API",
-      description: "Todo API Information",
-      contact: {
-        name: "Amazing Developer"
-      },
-      servers: ["http://localhost:8000"],
-      version: '1.0.0'
-    },
-  },
-  // ['.routes/*.js']
-  apis: ["server/routes/index.js"]
-};
-
-
+const swaggerOptions = require('../config/swaggerOpitions');
 
 module.exports = (app) => {
   const swaggerDocs = swaggerJsDoc(swaggerOptions);
@@ -92,8 +75,7 @@ module.exports = (app) => {
  *           $ref: '#/definitions/Todo'
  */
   app.get('/api/todos/:todoId', todosController.retrieve);
-
-  /*------------------------------------------------------------*/
+  
 /**
  * @swagger
  *
