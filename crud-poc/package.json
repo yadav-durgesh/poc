@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:serve": "./node_modules/.bin/nodemon ./bin/www -w server/app.js -w server",
+    "server": "./node_modules/.bin/nodemon ./bin/www -w server/app.js -w server",
+    "client": "cd client && npm run start",
+    "start:serve": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "concurrently": "^5.1.0",
     "cors": "^2.8.5",
     "eslint": "^6.8.0",
     "express": "^4.17.1",
